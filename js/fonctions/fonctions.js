@@ -8,7 +8,7 @@ function cardDraggable(cardId){
     const dropZone = document.querySelectorAll(".dropZone")
     console.log(dropZone);
     
-    const card= document.querySelector(`#${cardId}`)
+    const card= document.getElementById(cardId)
     card.addEventListener("dragstart", (e) => {
         e.dataTransfer.setData("text", e.target.id)
         card.classList.add("hold")
@@ -36,10 +36,13 @@ function cardDraggable(cardId){
         event.preventDefault()
     })
     zone.addEventListener("drop", (e) => {
-        e.preventDefault();
-        const data = e.dataTransfer.getData("text")
-        const draggedCard = document.getElementById(data)
-        e.target.appendChild(draggedCard)
+        
+            e.preventDefault();
+            const data = e.dataTransfer.getData("text")
+            const draggedCard = document.getElementById(data)
+            e.target.appendChild(draggedCard)
+        
+
     })
 
 })
@@ -132,8 +135,22 @@ function createModal(cardId, nameElement) {
         display: block;
         margin-bottom: 5px;
         font-weight: bold;
+        `;
+    const label_desc_edit = document.createElement('label');
+    label_desc_edit.textContent = 'Description de la tâche:';
+    label_desc_edit.style.cssText = `
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+        `;
+        
+    const description_edit = document.createElement('input');
+    description_edit.type = 'textArrea';
+    description_edit.style.cssText = `
+        padding: 10px 20px;
+        border: none
+        border-radius: 4px;
     `;
-
     // Footer du modal
     const modalFooter = document.createElement('div');
     modalFooter.style.cssText = `
@@ -162,23 +179,14 @@ function createModal(cardId, nameElement) {
         border-radius: 4px;
         cursor: pointer;
     `;
-    
-    const delBtn = document.createElement('button');
-    delBtn.textContent = 'Sauvegarder';
-    delBtn.style.cssText = `
-        padding: 10px 20px;
-        border: none;
-        background: #007bff;
-        color: white;
-        border-radius: 4px;
-        cursor: pointer;
-    `;
     // Assemblage du modal
     modalHeader.appendChild(modalTitle);
     modalHeader.appendChild(closeBtn);
     
     modalBody.appendChild(label);
     modalBody.appendChild(input);
+    modalBody.appendChild(label_desc_edit);
+    modalBody.appendChild(description_edit);
     
     modalFooter.appendChild(cancelBtn);
     modalFooter.appendChild(saveBtn);

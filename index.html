@@ -4,29 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KanBan</title>
-    <script src="/js/script.js" defer></script> <!-- Script JS chargé en différé -->
-    <link rel="stylesheet" href="./css/style.css"> <!-- Feuille de style compilée -->
+    <script src="./js/script.js" defer type="module"></script>
+    <link rel="stylesheet" href="./css/main.css">
 </head>
 <body>
-    <!-- Main -->
+    
     <main>
-
-        <!-- En-tête -->
-        <header class="header"> <!-- Bloc d'en-tête avec titre principal -->
+       
+        <header class="header"> 
             <h1>Organisateur KanBan</h1>
             <p>Organisez vos tâches de manière simple et efficace.</p>
         </header>
-
-        <!-- Contrôles des tâches -->
-        <section id="task-controls"> <!-- Zone de création et gestion des tâches -->
+        
+    <section class="Kanban">
+        <div class="task-controls"> <!-- Zone de création et gestion des tâches -->
             <input type="text" id="task-input" placeholder="Ajouter une nouvelle tâche...">
-            <button id="add-task-button">Ajouter une tâche</button>
-            <button id="clear-tasks-button">Vider les tâches</button>
-            <button id="delete-tasks-button">Supprimer une tâche</button>
-        </section>
+            <div class="task-button">
+                <button id="add-task-button">Ajouter une tâche</button>
+                <button id="clear-tasks-button">Vider les tàches</button>
+                <button id="delete-tasks-button">Supprimer une tàche</button>
+            </div>
+            
+        </div>
 
         <!-- Tableau Kanban -->
-        <section id="kanban-section"> <!-- Zone principale du tableau Kanban -->
+        <div id="kanban-section"> <!-- Zone principale du tableau Kanban -->
             <table class="kanban-table"> <!-- Structure tableau -->
                 <thead>
                     <tr>
@@ -36,7 +38,7 @@
                         <th id="completed">Terminées</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody class="kanban-table">
                     <tr>
                         <!-- Cellule : Liste des tâches à faire -->
                         <td>
@@ -61,7 +63,8 @@
                     </tr>
                 </tbody>
             </table>
-        </section>
+        </div>
+    </section>
 
     </main>
 </body>

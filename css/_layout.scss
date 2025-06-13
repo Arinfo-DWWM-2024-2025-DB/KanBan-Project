@@ -1,0 +1,24 @@
+@import './Abstracts/mixins.scss';
+
+body{
+    width: 100vw;
+    height: 100vh;
+    @include flex-center;
+
+}
+
+// input task - espace texte : ajouter une tâche
+#task-input {
+    padding: 0.6rem 1rem;
+    border: 2px solid #ccc;
+    @include border-radius(0.5rem);
+    @include text(1rem, none);
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+        // Focus
+        &:focus {
+        border: #363459;
+        box-shadow: 0 0 3px 3px rgba(54, 52, 89, 0.5);
+    }
+}

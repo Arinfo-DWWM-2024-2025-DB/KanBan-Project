@@ -12,7 +12,7 @@ document.querySelector('#clear-tasks-button').addEventListener('click', function
 
 document.querySelector('#add-task-button').addEventListener('click', function() {
     //on récupère la valeur de l'input
-    let valeur = document.querySelector('#input').value;
+    let valeur = document.querySelector('#task-input').value;
 
     //création de la carte || une div qui contiendra les informations de la tache || son titre (valeur de l'input)
     const card = document.createElement('div');
@@ -21,7 +21,7 @@ document.querySelector('#add-task-button').addEventListener('click', function() 
     
     //on nomme la tâche || sa description
     let desc = document.createElement('div');
-    desc.textContent = document.querySelector('#description').value;
+    desc.textContent = document.querySelector('#info-input').value;
     let name = document.createElement('h2');
     name.textContent = valeur;
 

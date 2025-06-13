@@ -4,9 +4,6 @@
 //on crée un conteneur
 const container = document.querySelector('#aFaire');
 
-<<<<<<< Updated upstream
-document.querySelector('#ajouter').addEventListener('click', function() {
-=======
 document.querySelector('#clear-tasks-button').addEventListener('click', function() {
     document.querySelectorAll('.card').forEach(function(card) {
         card.remove();
@@ -14,7 +11,6 @@ document.querySelector('#clear-tasks-button').addEventListener('click', function
 });
 
 document.querySelector('#add-task-button').addEventListener('click', function() {
->>>>>>> Stashed changes
     //on récupère la valeur de l'input
     let valeur = document.querySelector('#input').value;
 

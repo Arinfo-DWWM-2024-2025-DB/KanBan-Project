@@ -20,15 +20,7 @@ function cardDraggable(cardId){
         dropZone.forEach(zones => { 
             zones.classList.remove("highlightZonne")
         
-        });
-        if (e.target.closest("#enCours")){
-            etiquette.textContent = "En cours"
-        }else if (e.target.closest("#termine")){
-            etiquette.textContent = "Terminé"
-        }else if (e.target.closest("#aFaire")){
-            etiquette.textContent = "A faire"
-        }
-        
+        });        
         card.classList.remove("hold")
     })
     dropZone.forEach(zone => {
@@ -36,13 +28,17 @@ function cardDraggable(cardId){
         event.preventDefault()
     })
     zone.addEventListener("drop", (e) => {
-        
-            e.preventDefault();
-            const data = e.dataTransfer.getData("text")
-            const draggedCard = document.getElementById(data)
-            e.target.appendChild(draggedCard)
-        
 
+            e.preventDefault();
+            const dropZone = e.target.closest(".dropZone")
+            if (dropZone){
+                const data = e.dataTransfer.getData("text")
+                const draggedCard = document.getElementById(data)
+
+                if(draggedCard !== e.target){
+                    dropZone.appendChild(draggedCard)   
+                }
+            }
     })
 
 })

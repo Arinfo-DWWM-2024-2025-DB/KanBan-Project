@@ -5,7 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KanBan</title>
-    <script src="./js/script.js" defer type="module"></script>
+    <script src="./js/variables/variables.js"></script>
+    <script src="./js/fonctions/fonctions.js"></script>
+    <script src="./js/script.js" defer></script>
     <link rel="stylesheet" href="./css/main.css">
 </head>
 
@@ -21,7 +23,7 @@
         <section class="Kanban">
             <div class="task-controls"> <!-- Zone de création et gestion des tâches -->
                 <input type="text" id="task-input" placeholder="Ajouter une nouvelle tâche...">
-                <input type="text" id="task-input" placeholder="Ajouter une description...">
+                <textarea id="info-input" placeholder="Ajouter une description..."></textarea>
                 <div class="task-button">
                     <button id="add-task-button">Ajouter une tâche</button>
                     <button id="clear-tasks-button">Vider les tàches</button>

@@ -1,0 +1,59 @@
+@import '../Abstracts/variables';
+@import '../Abstracts/mixins';
+
+#kanban-section {
+  margin-top: 30px;
+
+  .kanban {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+
+    .dropZone {
+       flex: 1;
+  min-width: 250px;
+  min-height: 300px;
+  background-color: rgba(255, 255, 255, 0.1); 
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px); 
+  border: 2px dashed rgba(255, 255, 255, 0.3);
+  border-radius: $border-radius;
+  padding: 15px;
+  text-align: center;
+
+  transition: background-color 0.3s ease, box-shadow 0.2s ease;
+
+      // Titre de la colonne
+      &::before {
+        content: attr(id);
+        display: block;
+        font-weight: bold;
+        text-transform: capitalize;
+        margin-bottom: 10px;
+        font-size: 1.2rem;
+        color: $primary-color;
+      }
+
+      &:hover {
+        background-color: lighten($card-bg, 5%);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+      }
+
+      // Pour les futures cartes de tâches
+      .task {
+        background-color: white;
+        border: 1px solid $gray;
+        padding: 10px;
+        border-radius: $border-radius;
+        margin-bottom: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        cursor: grab;
+
+        &:active {
+          cursor: grabbing;
+        }
+      }
+    }
+  }
+}

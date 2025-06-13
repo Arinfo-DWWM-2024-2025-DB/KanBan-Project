@@ -1,0 +1,34 @@
+// ===============================================================
+// Bouttons de l'application Kanban
+// ===============================================================
+@import '../Abstracts/mixins.scss';
+
+
+
+
+.task-controls{
+    @include flex-column;
+    gap: 50px;
+    
+
+    .task-button{
+        display: flex;
+        justify-content: center;
+        gap: 5%;
+        button {
+        padding: 0.6rem 1.2rem;
+        border-radius: 8px;
+        font-weight: bold;
+        border: none;
+        cursor: pointer;
+        background-color: #020024;
+        @include text(1rem, #fff);
+            }
+        }
+    
+    }
+
+
+
+
+

@@ -5,25 +5,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KanBan</title>
-    <script src="./js/variables/variables.js"></script>
-    <script src="./js/fonctions/fonctions.js"></script>
-    <script src="./js/script.js" defer></script>
+    <script src="./js/script.js" defer type="module"></script>
+    <script src="./js/animation.js" defer type="module"></script>
     <link rel="stylesheet" href="./css/main.css">
+    <script src="https://kit.fontawesome.com/f30c0be967.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
 
     <main>
 
-        <header class="header">
-            <h1>Organisateur KanBan</h1>
-            <p>Organisez vos tâches de manière simple et efficace.</p>
+        <header class="side-header">
+            <div class="header-content">
+                <h1>Organisateur KanBan</h1>
+                <p>Organisez vos tâches de manière <br /> simple et efficace.</p>
+            </div>
+            <div class="arrow" id="toggle-header">
+                <i class="fa-solid fa-arrow-left"></i>
+            </div>
         </header>
 
-        <section class="Kanban">
+
+        <section class="Kanban kanban-section1">
             <div class="task-controls"> <!-- Zone de création et gestion des tâches -->
                 <input type="text" id="task-input" placeholder="Ajouter une nouvelle tâche...">
-                <textarea id="info-input" placeholder="Ajouter une description..."></textarea>
+                <input type="text" id="task-input" placeholder="Ajouter une description...">
                 <div class="task-button">
                     <button id="add-task-button">Ajouter une tâche</button>
                     <button id="clear-tasks-button">Vider les tàches</button>
@@ -33,6 +39,11 @@
 
             <!-- Tableau Kanban -->
             <div id="kanban-section"> <!-- Zone principale du tableau Kanban -->
+                <div class="container-content">
+                    <div class="content"><span>À faire</span></div>
+                    <div class="content"><span>En cours</span></div>
+                    <div class="content"><span>Termine</span></div>
+                </div>
                 <div class="kanban">
                     <div class="dropZone" id="aFaire"></div>
                     <div class="dropZone" id="enCours"></div>

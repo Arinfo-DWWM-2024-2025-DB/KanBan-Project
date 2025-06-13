@@ -1,21 +1,43 @@
-.header {
-  @include flex-column;
-  align-items: center;
-  text-align: center;
-  padding: 2rem 1rem;
-  background-color: rgba(0, 29, 88, 0.6); 
-  @include text(1rem, #fff);
-  border-radius: 8px;
-  max-width: 900px;
-  margin: 2rem auto;
+.side-header {
+  position: absolute;
+  top: 0;
+  left: -25%;
+  width: 303px;
+  height: 100%;
+  background-color: transparent;
+  color: white;
+  z-index: 1000;
+  display: flex;
 
-  h1 {
-    @include text(2.5rem, #daab64);
-    margin-bottom: 0.5rem;
+
+  .header-content {
+    background-color: rgba(255, 255, 255, 0.1);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    padding: 3rem;
+    border-radius: 1rem;
+    padding: 3rem;
+    font-family: 'Poppins', sans-serif;
   }
 
-  p {
-    @include text(1.2rem, #e0e0e0);
-    max-width: 600px;
+  .arrow {
+    cursor: pointer;
+    text-align: center;
+    padding: 2rem 3rem;
+    color: #fff;
+    font-size: 1.5rem;
+
+    i {
+      transition: transform 0.3s ease;
+    }
   }
+}
+
+.open .arrow i {
+  transform: rotate(180deg);
+}
+
+.open {
+  transform: translateX(94%);
+  transition: 0.5s ease;
 }

@@ -70,12 +70,7 @@ document.querySelector('#add-task-button').addEventListener('click', function() 
     card.appendChild(modif);
     cards.push(card)
     cardDraggable(card.id)
-    etiquette.textContent="A faire"
-    etiquette.classList.add("etiquette")
-    card.appendChild(etiquette)
 
-    //style à supprimer à l'implémentation
-    card.setAttribute('style', 'border: 1px solid black; width: 300px; height: 200px; display: flex; flex-direction: column; justify-content: space-between; align-items: center;');
 })
 
 // Fonction pour créer un modal fonctionnel

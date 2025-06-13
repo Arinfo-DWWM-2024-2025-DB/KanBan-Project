@@ -1,13 +1,69 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="/js/script.js"></script>
-    <link rel="stylesheet" href="./css/style.css">
-</head>
-<body>
+<!--Main-->
+<main> <!-- Zone principale de l'application -->
+
+    <!--titre-->
+    <div class="header"> <!-- En-tête de l'application -->
+        <h1>Organisateur KanBan</h1> <!-- Titre principal -->
+        <p>Organisez vos tâches de manière simple et efficace.</p> <!-- Slogan -->
+    </div>
     
-</body>
-</html>
+    <!--KanBan-->
+    <div class="title"> <!-- Sous-titre ou rappel du nom Kanban -->
+        <h2>KanBan</h2>
+    </div>
+    
+    <!--Barre de gestion des tâches-->
+    <div id="task-controls"> <!-- Zone de saisie et gestion des tâches -->
+        <input type="text" id="task-input" placeholder="Ajouter une nouvelle tâche..."> <!-- Champ texte pour nouvelle tâche -->
+        <button id="add-task-button">Ajouter une tâche</button> <!-- Bouton d'ajout -->
+        <button id="clear-tasks-button">Vider les tâches</button> <!-- Bouton pour tout supprimer -->
+        <button id="delete-tasks-button">Supprimer une tâche</button> <!-- Bouton pour en supprimer une (fonction à définir) -->
+    </div>
+
+    <!--Section Columnes du Kanban-->
+    <section id="kanban-section"> <!-- Section principale Kanban -->
+        <div class="kanban-container"> <!-- Conteneur global des colonnes -->
+
+            <!--Section Colonnes du Kanban (en tableau)-->
+<!-- Tableau Kanban -->
+        <section id="kanban-section"> <!-- Zone principale du tableau Kanban -->
+            <table class="kanban-table"> <!-- Structure tableau -->
+                <thead>
+                    <tr>
+                        <!-- Titres des colonnes -->
+                        <th id="do">À faire</th>
+                        <th id="process">En cours</th>
+                        <th id="completed">Terminées</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <!-- Cellule : Liste des tâches à faire -->
+                        <td>
+                            <ul id="todo-list">
+                                <!-- Tâches dynamiques JS -->
+                            </ul>
+                        </td>
+
+                        <!-- Cellule : Liste des tâches en cours -->
+                        <td>
+                            <ul id="in-progress-list">
+                                <!-- Tâches dynamiques JS -->
+                            </ul>
+                        </td>
+
+                        <!-- Cellule : Liste des tâches terminées -->
+                        <td>
+                            <ul id="done-list">
+                                <!-- Tâches dynamiques JS -->
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+            <!-- Fin de la section Kanban -->
+
+        </div>
+    </section>
+</main>

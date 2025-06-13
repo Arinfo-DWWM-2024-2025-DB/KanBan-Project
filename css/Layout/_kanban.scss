@@ -1,59 +1,59 @@
-// Table Kanban
+@import '../Abstracts/variables';
+@import '../Abstracts/mixins';
 
-@import '../Abstracts/mixins.scss';
+#kanban-section {
+  margin-top: 30px;
 
+  .kanban {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
 
-.Kanban{
-    @include flex-column;    
+    .dropZone {
+       flex: 1;
+  min-width: 250px;
+  min-height: 300px;
+  background-color: rgba(255, 255, 255, 0.1); 
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px); 
+  border: 2px dashed rgba(255, 255, 255, 0.3);
+  border-radius: $border-radius;
+  padding: 15px;
+  text-align: center;
 
-    #kanban-section{
-        width: 100%;
-        padding: 2rem;
-        max-width: 1200px;
-        margin: 0 auto;
+  transition: background-color 0.3s ease, box-shadow 0.2s ease;
 
-    .kanban-table {
-    width: 100%;
-    border-collapse: collapse;
-    table-layout: fixed;
-    @include flex-center;
-    @include flex-column;
+      // Titre de la colonne
+      &::before {
+        content: attr(id);
+        display: block;
+        font-weight: bold;
+        text-transform: capitalize;
+        margin-bottom: 10px;
+        font-size: 1.2rem;
+        color: $primary-color;
+      }
 
-    thead {
-        tr{
-            @include grid-card(3);
-            gap: 50px;
-            
-                #do, #process, #completed{
-                    @include text (0.8rem, #fff);
-                    padding: 5px;
-                    background-color: #001D58;
-                    padding: 10px;
-                    border-radius: 1rem;
-                }
-            }
+      &:hover {
+        background-color: lighten($card-bg, 5%);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+      }
+
+      // Pour les futures cartes de tâches
+      .task {
+        background-color: white;
+        border: 1px solid $gray;
+        padding: 10px;
+        border-radius: $border-radius;
+        margin-bottom: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        cursor: grab;
+
+        &:active {
+          cursor: grabbing;
         }
+      }
     }
-
-    tbody{
-        @include grid-card;
-    }
-    tr {
-        td {
-            vertical-align: top;
-            padding: 1rem;
-            background-color: #f9f9f9;
-
-            ul {
-                list-style: none;
-                margin: 0;
-                padding: 0;
-                min-height: 200px;
-                border: 2px dashed #ccc;
-                border-radius: 0.5rem;
-                background-color: #fefefe;
-            }
-        }
-    }
-}
+  }
 }

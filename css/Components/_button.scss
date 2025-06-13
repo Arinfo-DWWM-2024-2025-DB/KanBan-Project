@@ -12,24 +12,17 @@
     
 
     .task-button{
-        @include grid-card(3);
+        display: flex;
+        justify-content: center;
+        gap: 5%;
         button {
         padding: 0.6rem 1.2rem;
-        @include border-radius(01.5rem);
+        border-radius: 8px;
         font-weight: bold;
+        border: none;
         cursor: pointer;
         background-color: #020024;
         @include text(1rem, #fff);
-            // &:hover {
-            //     background-color: #4a7a8c;
-            //     color: white;
-            //     padding: 0.5rem;                    
-            //     }
-            //     &:active {
-            //         background-color: #363459;
-                    // transform: scale(1.10);
-                // }
-
             }
         }
     

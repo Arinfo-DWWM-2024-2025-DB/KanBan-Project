@@ -1,4 +1,4 @@
-etiquette.textContent="A faire"
+
 
 
 //on crée un conteneur
@@ -10,11 +10,22 @@ document.querySelector('#ajouter').addEventListener('click', function() {
 
     //création de la carte || une div qui contiendra les informations de la tache || son titre (valeur de l'input)
     const card = document.createElement('div');
+    const crossBtn = document.createElement("button");
     const status = document.createElement('div');
     
-    //on nomme la tâche
+    //on nomme la tâche || sa description
+    let desc = document.createElement('div');
+    desc.textContent = document.querySelector('#description').value;
     let name = document.createElement('h2');
     name.textContent = valeur;
+
+    //Ajout du button de delete card
+    crossBtn.textContent="X"
+    crossBtn.id = "crossBtn"
+    crossBtn.addEventListener("click", function(){
+        card.remove()
+    })
+
     
     //on ajoute la carte et ses informations    
     const cardId = (uniqueID());
@@ -23,7 +34,9 @@ document.querySelector('#ajouter').addEventListener('click', function() {
     card.setAttribute('class', 'card');
     card.appendChild(name);
     card.appendChild(status);
-    status.textContent = 'Informations';
+    card.appendChild(desc)
+    card.appendChild(crossBtn);
+    status.textContent = 'Informations:';
 
     //on créer le label du status
     status.setAttribute('id', 'status');
@@ -32,7 +45,7 @@ document.querySelector('#ajouter').addEventListener('click', function() {
     const dateDiv = document.createElement('div');
     const currentDate = new Date().toLocaleString();
     dateDiv.textContent = `Date d'ajout: ${currentDate}`;
-    card.appendChild(dateDiv);
+    status.appendChild(dateDiv);
 
     //on ajoute la carte au conteneur
     container.appendChild(card);
@@ -51,6 +64,8 @@ document.querySelector('#ajouter').addEventListener('click', function() {
     card.appendChild(modif);
     cards.push(card)
     cardDraggable(card.id)
+    etiquette.textContent="A faire"
+    etiquette.classList.add("etiquette")
     card.appendChild(etiquette)
 
     //style à supprimer à l'implémentation

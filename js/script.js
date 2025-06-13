@@ -4,9 +4,19 @@
 //on crée un conteneur
 const container = document.querySelector('#aFaire');
 
+<<<<<<< Updated upstream
+document.querySelector('#ajouter').addEventListener('click', function() {
+=======
+document.querySelector('#clear-tasks-button').addEventListener('click', function() {
+    document.querySelectorAll('.card').forEach(function(card) {
+        card.remove();
+    });
+});
+
 document.querySelector('#add-task-button').addEventListener('click', function() {
+>>>>>>> Stashed changes
     //on récupère la valeur de l'input
-    let valeur = document.querySelector('#task-input').value;
+    let valeur = document.querySelector('#input').value;
 
     //création de la carte || une div qui contiendra les informations de la tache || son titre (valeur de l'input)
     const card = document.createElement('div');
@@ -15,7 +25,7 @@ document.querySelector('#add-task-button').addEventListener('click', function() 
     
     //on nomme la tâche || sa description
     let desc = document.createElement('div');
-    desc.textContent = document.querySelector('#info-input').value;
+    desc.textContent = document.querySelector('#description').value;
     let name = document.createElement('h2');
     name.textContent = valeur;
 
@@ -64,7 +74,9 @@ document.querySelector('#add-task-button').addEventListener('click', function() 
     card.appendChild(modif);
     cards.push(card)
     cardDraggable(card.id)
-
+    etiquette.textContent="A faire"
+    etiquette.classList.add("etiquette")
+    card.appendChild(etiquette)
 
     //style à supprimer à l'implémentation
     card.setAttribute('style', 'border: 1px solid black; width: 300px; height: 200px; display: flex; flex-direction: column; justify-content: space-between; align-items: center;');

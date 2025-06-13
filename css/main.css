@@ -1,3 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+#aFaire {
+  animation-delay: 0s !important;
+}
+
+#enCours {
+  animation-delay: 0.6s !important;
+}
+
+#termine {
+  animation-delay: 1s !important;
+}
+
 .task-controls {
   display: flex;
   flex-direction: column;
@@ -20,31 +43,66 @@
   color: #fff;
 }
 
-.header {
+.side-header {
+  position: absolute;
+  top: 0;
+  left: -25%;
+  width: 303px;
+  height: 100%;
+  background-color: transparent;
+  color: white;
+  z-index: 1000;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+}
+.side-header .header-content {
+  background-color: rgba(255, 255, 255, 0.1);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  padding: 3rem;
+  border-radius: 1rem;
+  padding: 3rem;
+  font-family: "Poppins", sans-serif;
+}
+.side-header .arrow {
+  cursor: pointer;
   text-align: center;
-  padding: 2rem 1rem;
-  background-color: rgba(0, 29, 88, 0.6);
-  font-size: 1rem;
-  font-family: Arial, Helvetica, sans-serif;
+  padding: 2rem 3rem;
   color: #fff;
-  border-radius: 8px;
-  max-width: 900px;
-  margin: 2rem auto;
+  font-size: 1.5rem;
 }
-.header h1 {
-  font-size: 2.5rem;
-  font-family: Arial, Helvetica, sans-serif;
-  color: #daab64;
-  margin-bottom: 0.5rem;
+.side-header .arrow i {
+  transition: transform 0.3s ease;
 }
-.header p {
-  font-size: 1.2rem;
-  font-family: Arial, Helvetica, sans-serif;
-  color: #e0e0e0;
-  max-width: 600px;
+
+.open .arrow i {
+  transform: rotate(180deg);
+}
+
+.open {
+  transform: translateX(94%);
+  transition: 0.5s ease;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+#aFaire {
+  animation-delay: 0s !important;
+}
+
+#enCours {
+  animation-delay: 0.6s !important;
+}
+
+#termine {
+  animation-delay: 1s !important;
 }
 
 #kanban-section {
@@ -67,20 +125,21 @@
   border-radius: 8px;
   padding: 15px;
   text-align: center;
-  transition: background-color 0.3s ease, box-shadow 0.2s ease;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  animation: fadeInUp 0.5s ease forwards;
+  opacity: 0;
+  color: aliceblue;
 }
 #kanban-section .kanban .dropZone::before {
-  content: attr(id);
   display: block;
   font-weight: bold;
   text-transform: capitalize;
   margin-bottom: 10px;
   font-size: 1.2rem;
-  color: #3f51b5;
 }
 #kanban-section .kanban .dropZone:hover {
-  background-color: white;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  transform: scale(1.03);
+  background-color: rgba(255, 255, 255, 0.2);
 }
 #kanban-section .kanban .dropZone .task {
   background-color: white;
@@ -93,6 +152,18 @@
 }
 #kanban-section .kanban .dropZone .task:active {
   cursor: grabbing;
+}
+
+.container-content {
+  display: flex;
+  justify-content: space-around;
+  color: white;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+* {
+  font-family: "Poppins", sans-serif;
 }
 
 body {

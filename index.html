@@ -1,31 +1,31 @@
-<!--Main-->
-<main> <!-- Zone principale de l'application -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KanBan</title>
+    <script src="/js/script.js" defer></script> <!-- Script JS chargé en différé -->
+    <link rel="stylesheet" href="./css/style.css"> <!-- Feuille de style compilée -->
+</head>
+<body>
+    <!-- Main -->
+    <main>
 
-    <!--titre-->
-    <div class="header"> <!-- En-tête de l'application -->
-        <h1>Organisateur KanBan</h1> <!-- Titre principal -->
-        <p>Organisez vos tâches de manière simple et efficace.</p> <!-- Slogan -->
-    </div>
-    
-    <!--KanBan-->
-    <div class="title"> <!-- Sous-titre ou rappel du nom Kanban -->
-        <h2>KanBan</h2>
-    </div>
-    
-    <!--Barre de gestion des tâches-->
-    <div id="task-controls"> <!-- Zone de saisie et gestion des tâches -->
-        <input type="text" id="task-input" placeholder="Ajouter une nouvelle tâche..."> <!-- Champ texte pour nouvelle tâche -->
-        <button id="add-task-button">Ajouter une tâche</button> <!-- Bouton d'ajout -->
-        <button id="clear-tasks-button">Vider les tâches</button> <!-- Bouton pour tout supprimer -->
-        <button id="delete-tasks-button">Supprimer une tâche</button> <!-- Bouton pour en supprimer une (fonction à définir) -->
-    </div>
+        <!-- En-tête -->
+        <header class="header"> <!-- Bloc d'en-tête avec titre principal -->
+            <h1>Organisateur KanBan</h1>
+            <p>Organisez vos tâches de manière simple et efficace.</p>
+        </header>
 
-    <!--Section Columnes du Kanban-->
-    <section id="kanban-section"> <!-- Section principale Kanban -->
-        <div class="kanban-container"> <!-- Conteneur global des colonnes -->
+        <!-- Contrôles des tâches -->
+        <section id="task-controls"> <!-- Zone de création et gestion des tâches -->
+            <input type="text" id="task-input" placeholder="Ajouter une nouvelle tâche...">
+            <button id="add-task-button">Ajouter une tâche</button>
+            <button id="clear-tasks-button">Vider les tâches</button>
+            <button id="delete-tasks-button">Supprimer une tâche</button>
+        </section>
 
-            <!--Section Colonnes du Kanban (en tableau)-->
-<!-- Tableau Kanban -->
+        <!-- Tableau Kanban -->
         <section id="kanban-section"> <!-- Zone principale du tableau Kanban -->
             <table class="kanban-table"> <!-- Structure tableau -->
                 <thead>
@@ -62,8 +62,7 @@
                 </tbody>
             </table>
         </section>
-            <!-- Fin de la section Kanban -->
 
-        </div>
-    </section>
-</main>
+    </main>
+</body>
+</html>

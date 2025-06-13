@@ -1,13 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="/js/script.js"></script>
-    <link rel="stylesheet" href="./css/style.css">
+    <title>KanBan</title>
+    <script src="./js/script.js" defer type="module"></script>
+    <link rel="stylesheet" href="./css/main.css">
 </head>
+
 <body>
-    
+
+    <main>
+
+        <header class="header">
+            <h1>Organisateur KanBan</h1>
+            <p>Organisez vos tâches de manière simple et efficace.</p>
+        </header>
+
+        <section class="Kanban">
+            <div class="task-controls"> <!-- Zone de création et gestion des tâches -->
+                <input type="text" id="task-input" placeholder="Ajouter une nouvelle tâche...">
+                <input type="text" id="task-input" placeholder="Ajouter une description...">
+                <div class="task-button">
+                    <button id="add-task-button">Ajouter une tâche</button>
+                    <button id="clear-tasks-button">Vider les tàches</button>
+                </div>
+
+            </div>
+
+            <!-- Tableau Kanban -->
+            <div id="kanban-section"> <!-- Zone principale du tableau Kanban -->
+                <div class="kanban">
+                    <div class="dropZone" id="aFaire"></div>
+                    <div class="dropZone" id="enCours"></div>
+                    <div class="dropZone" id="termine"></div>
+                </div>
+            </div>
+        </section>
+
+    </main>
 </body>
+
 </html>
